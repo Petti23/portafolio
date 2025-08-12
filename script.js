@@ -11,23 +11,21 @@ const colors = ['#6c63ff', '#5548c8', '#f4f7f9'];
 
 // Clase para representar cada partícula
 class Particle {
-    constructor() {
+   constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.size = Math.random() * 3 + 1; // Tamaño aleatorio entre 1 y 4
-        this.speedX = (Math.random() - 0.5) * 0.5; // Velocidad horizontal lenta
-        this.speedY = (Math.random() - 0.5) * 0.5; // Velocidad vertical lenta
-        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5; // Velocidad horizontal
+        this.speedY = (Math.random() - 0.5) * 0.5; // Velocidad vertical
+        this.color = colors [Math.floor(Math.random() * colors.length)];
     }
 
     // Actualiza la posición de la partícula
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
-    }
 
-    // Verifica si la partícula está fuera de los límites del canvas y la envia al otro lado
-    checkBounds() {
+        // Si la partícula sale de la pantalla, la reubica en el lado opuesto
         if (this.x < 0) this.x = width;
         if (this.x > width) this.x = 0;
         if (this.y < 0) this.y = height;
@@ -36,11 +34,11 @@ class Particle {
 
     // Dibuja la partícula en el canvas
     draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
+      ctx.fillStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.fill();
     }
 }
 
