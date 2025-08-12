@@ -20,7 +20,7 @@
     width: 100%;
     height: 100%;
     z-index: -1; /* Envía el canvas al fondo */
-    background: var(--background-color); /* Color de fondo del canvas */
+    background: var(--background-color); 
 }
 
 /* Envuelve el resto del contenido en un div con esta clase para que quede por encima del canvas */
@@ -406,7 +406,6 @@ nav.container {
     font-weight: 600;
 }
 
-/* Contacto */
 .contacto-flex {
     display: flex;
     justify-content: space-between;
@@ -536,30 +535,3 @@ nav.container {
     }
 }
 
-/* Estilos para móviles más pequeños (max-width: 768px) */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .main-title {
-        font-size: 2.5rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .presentation-img {
-        display: none;
-    }
-
-    .contacto-flex {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .contact-form {
-        width: 100%;
-    }
-}
