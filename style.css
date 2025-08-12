@@ -1,7 +1,7 @@
-/* Importar una fuente moderna */
+/* Fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Variables CSS para una gestión más fácil del diseño */
+/* Variables CSS  */
 :root {
     --primary-color: #6c63ff;
     --secondary-color: #5548c8;
@@ -13,7 +13,22 @@
     --border-radius: 10px;
 }
 
-/* Reset y estilos base */
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Envía el canvas al fondo */
+    background: var(--background-color); /* Color de fondo del canvas */
+}
+
+/* Envuelve el resto del contenido en un div con esta clase para que quede por encima del canvas */
+.content {
+    position: relative;
+    z-index: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +58,7 @@ a {
     padding: 0 2rem;
 }
 
-/* Estilos de Tipografía */
+
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -69,7 +84,7 @@ a {
     font-weight: 300;
 }
 
-/* Encabezado y Navegación */
+
 #main-header {
     background: var(--card-bg);
     padding: 1rem 0;
@@ -129,7 +144,7 @@ nav.container {
     width: 100%;
 }
 
-/* Sección de Presentación (Hero) */
+
 .hero-section {
     min-height: calc(100vh - 80px);
     display: flex;
@@ -177,7 +192,7 @@ nav.container {
     margin-bottom: 2rem;
 }
 
-.presentacion-img {
+.presentation-img {
     animation: fadeIn 2s ease-out;
 }
 
@@ -230,12 +245,12 @@ nav.container {
     box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
 }
 
-/* Estilos para las Secciones */
+
 .section {
     padding: 6rem 0;
 }
 
-/* Proyectos */
+
 .proyectos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
@@ -298,7 +313,6 @@ nav.container {
     margin: 0 auto;
 }
 
-/* Estilo predeterminado (móvil primero) */
 .timeline::after {
     content: '';
     position: absolute;
@@ -536,7 +550,7 @@ nav.container {
         font-size: 2rem;
     }
 
-    .presentacion-img {
+    .presentation-img {
         display: none;
     }
 
