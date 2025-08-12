@@ -26,6 +26,14 @@ class Particle {
         this.y += this.speedY;
     }
 
+    // Verifica si la partícula está fuera de los límites del canvas y la envia al otro lado
+    checkBounds() {
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+    }
+
     // Dibuja la partícula en el canvas
     draw() {
         ctx.fillStyle = this.color;
