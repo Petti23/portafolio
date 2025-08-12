@@ -1,5 +1,5 @@
 Portafolio - Valentino Pettinato
-📝 Descripción
+
 Este es un portafolio personal y profesional diseñado para mostrar mis habilidades, proyectos y experiencia como desarrollador web y porgramador. El sitio web es completamente responsive, con un diseño moderno y una experiencia de usuario optimizada para todos los dispositivos.
 
 🚀 Tecnologías Utilizadas
