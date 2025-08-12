@@ -1,7 +1,7 @@
-/* Fuente moderna */
+/* Importar una fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* Variables CSS  */
+/* Variables CSS para una gestión más fácil del diseño */
 :root {
     --primary-color: #6c63ff;
     --secondary-color: #5548c8;
@@ -13,6 +13,7 @@
     --border-radius: 10px;
 }
 
+/* Estilo para el canvas del fondo */
 #background-canvas {
     position: fixed;
     top: 0;
@@ -20,7 +21,7 @@
     width: 100%;
     height: 100%;
     z-index: -1; /* Envía el canvas al fondo */
-    background: var(--background-color); 
+    background: var(--background-color); /* Color de fondo del canvas */
 }
 
 /* Envuelve el resto del contenido en un div con esta clase para que quede por encima del canvas */
@@ -29,6 +30,7 @@
     z-index: 0;
 }
 
+/* Reset y estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +45,6 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: var(--background-color);
     overflow-x: hidden; /* Evita el scroll horizontal */
 }
 
@@ -58,7 +59,7 @@ a {
     padding: 0 2rem;
 }
 
-
+/* Estilos de Tipografía */
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -84,7 +85,7 @@ a {
     font-weight: 300;
 }
 
-
+/* Encabezado y Navegación */
 #main-header {
     background: var(--card-bg);
     padding: 1rem 0;
@@ -144,7 +145,7 @@ nav.container {
     width: 100%;
 }
 
-
+/* Sección de Presentación (Hero) */
 .hero-section {
     min-height: calc(100vh - 80px);
     display: flex;
@@ -192,7 +193,7 @@ nav.container {
     margin-bottom: 2rem;
 }
 
-.presentation-img {
+.presentacion-img {
     animation: fadeIn 2s ease-out;
 }
 
@@ -245,18 +246,23 @@ nav.container {
     box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
 }
 
-
+/* Estilos para las Secciones */
 .section {
     padding: 6rem 0;
 }
 
-
+/* Proyectos */
 .proyectos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Aumento el minmax para que intenten estar en una fila */
     gap: 2rem;
 }
 
+@media (max-width: 768px) {
+    .proyectos-grid {
+        grid-template-columns: 1fr; /* Vuelve a una columna en pantallas más pequeñas */
+    }
+}
 
 .project-card {
     background: var(--card-bg);
@@ -313,6 +319,7 @@ nav.container {
     margin: 0 auto;
 }
 
+/* Estilo predeterminado (móvil primero) */
 .timeline::after {
     content: '';
     position: absolute;
@@ -378,11 +385,10 @@ nav.container {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Estilo específico para C++ */
+/* Estilo específico para C++ porque no me gustaba el default*/
 .skill-card .fa-c {
     font-size: 3rem;
 }
-
 .skill-card .fa-plus {
     font-size: 1.5rem;
     position: relative;
@@ -406,6 +412,7 @@ nav.container {
     font-weight: 600;
 }
 
+/* Contacto */
 .contacto-flex {
     display: flex;
     justify-content: space-between;
@@ -481,6 +488,14 @@ nav.container {
     border-top: 1px solid #ddd;
 }
 
+/* Estilos para el ícono de menú de hamburguesa */
+.nav-toggle {
+    display: none; /* Oculto en pantallas grandes */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
 /* Animaciones */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -532,6 +547,74 @@ nav.container {
     .timeline-item:nth-child(odd) .timeline-content,
     .timeline-item:nth-child(even) .timeline-content {
         text-align: left;
+    }
+}
+
+/* Estilos para móviles más pequeños (max-width: 768px) */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block; /* Muestra el ícono de hamburguesa */
+    }
+
+    .nav-links {
+        /* Estilos para el menú desplegable en móviles */
+        flex-direction: column;
+        background: var(--card-bg);
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        height: 0; 
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        box-shadow: var(--shadow);
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    .nav-links.active {
+        height: 250px; /* Altura para mostrar todos los enlaces */
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--background-color);
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+
+    .nav-link::after {
+        display: none; 
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .presentacion-img {
+        display: none;
+    }
+
+    .contacto-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-form {
+        width: 100%;
     }
 }
 
