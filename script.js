@@ -6,7 +6,7 @@ let width, height;
 let particles = [];
 // Número de partículas, puedes ajustar este valor
 const numParticles = 100;
-// Paleta de colores extraída de tus variables CSS
+// Paleta de colores extraída del CSS
 const colors = ['#6c63ff', '#5548c8', '#f4f7f9'];
 
 // Clase para representar cada partícula
@@ -24,12 +24,6 @@ class Particle {
     update() {
         this.x += this.speedX;
         this.y += this.speedY;
-
-        // Si la partícula sale de la pantalla, la reubica en el lado opuesto
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-        if (this.y < 0) this.y = height;
-        if (this.y > height) this.y = 0;
     }
 
     // Dibuja la partícula en el canvas
